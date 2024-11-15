@@ -9,31 +9,27 @@ To design an Android application with a TextField and a button labeled "Open in 
 Latest Version Android Studio
 
 ## ALGORITHM:
-Step 1: Open Android Stdio and then click on File -> New -> New project.
 
-Step 2: Then type the Application name as implicitintent and click Next.
+1.Open the android studio
 
-Step 3: Then select the Minimum SDK as shown below and click Next.
+2.Create the project
 
-Step 4: Then select the Empty Activity and click Next. Finally click Finish.
+3.Write the jave and xml code
 
-Step 5: Design layout in activity_main.xml.
-
-Step 6: Type any url, click navigate and that will take you to the expected url.
-
-Step 7: Save and run the application.
+4.Run on virtual device
 
 ## PROGRAM:
 ```
 /*
 Program to print the text “Implicitintent”.
 Developed by: Hemapriya R
-Registeration Number: 212222040055
+Registeration Number : 212222040055
 */
 ```
-## MainActivity.java:
+## Java code:
+
 ```
-package com.example.exp3;
+package com.example.ex_3;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -64,8 +60,74 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
+package com.example.ex_3;
+
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+    Button button;
+
+    EditText editText;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        final EditText editText = (EditText) findViewById(R.id.urlText);
+        Button btn = (Button) findViewById(R.id.btnNavigate);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = editText.getText().toString();
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                startActivity(intent);
+            }
+        });
+    }
+}
+package com.example.ex_3;
+
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+    Button button;
+
+    EditText editText;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        final EditText editText = (EditText) findViewById(R.id.urlText);
+        Button btn = (Button) findViewById(R.id.btnNavigate);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = editText.getText().toString();
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                startActivity(intent);
+            }
+        });
+    }
+}
+
+
 ```
-## activitymain.xml:
+
+## XML code:
+
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
@@ -90,16 +152,15 @@ public class MainActivity extends AppCompatActivity {
         android:text="Navigate"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>
+
 ```
+
 ## OUTPUT
-![image](https://github.com/user-attachments/assets/16be91ec-1e98-475a-91ea-b20393e4fd7a)
-
-![image](https://github.com/user-attachments/assets/2077fb95-4d01-47ac-b1e6-9a801aecb267)
-
-![image](https://github.com/user-attachments/assets/7bd27ac1-2f17-4f75-a814-f2743b599a1d)
 
 
+<img src="https://github.com/user-attachments/assets/c9a98924-3342-4b95-8a09-05c5ee2652c8" width="400">
 
+<img src="https://github.com/user-attachments/assets/c03fe0fa-57c7-4044-8226-89eadb6756f2" width="400">
 
 
 
